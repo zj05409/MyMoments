@@ -4,7 +4,7 @@ const types=['文字','图片','视频','语音','24 点','问答'];
 const icons=['✎','▧','▷','♫','♧','?'];
 const today=new Date();
 function dateKey(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
-function past(n){const d=new Date(today);d.setDate(d.getDate()-n);return d.getTime()}
+function past(n){const d=new Date(today);d.setHours(0,0,0,0);d.setDate(d.getDate()-n);return d.getTime()}
 let records=[
  {id:'lake',kind:'图片',title:'在山与湖之间，慢下来',body:'湖面安静得像一面镜子。沿着岸边走了一圈，把今天的风景留在这里。',tags:['山野','散步'],image:'lake.jpg',at:past(0)},
  {id:'game',kind:'24 点',title:'来一局 24 点',body:'用下面四个数字，通过加减乘除算出 24。',tags:[],at:past(1)},
